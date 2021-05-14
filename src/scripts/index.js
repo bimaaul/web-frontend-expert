@@ -1,30 +1,20 @@
-import "regenerator-runtime"; /* for async await transpile */
-import "../styles/main.scss";
-import "./components/AppBar";
-import "./components/FootBar";
-import "./components/HeroElement";
-import "./components/RestaurantList";
+/* eslint-disable no-unused-vars */
+import 'regenerator-runtime'; /* for async await transpile */
+import '../styles/main.scss';
+import './views/components/AppBar';
+import './views/components/FootBar';
+import App from './views/app';
 
-document.addEventListener("DOMContentLoaded", () => {
-  const burgetBtn = document.querySelector(".burger");
-  const drawer = document.querySelector(".nav__links");
-  const hero = document.querySelector(".hero");
-  const main = document.querySelector("main");
+const app = new App({
+  button: document.querySelector('.burger'),
+  drawer: document.querySelector('.nav__links'),
+  content: document.querySelector('#mainContent'),
+});
 
-  burgetBtn.addEventListener("click", (event) => {
-    console.log("click");
-    drawer.classList.toggle("open");
-    event.stopPropagation();
-  });
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-  burgetBtn.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-      console.log("click");
-      drawer.classList.toggle("open");
-      event.stopPropagation();
-    }
-  });
-
-  hero.addEventListener("click", () => drawer.classList.remove("open"));
-  main.addEventListener("click", () => drawer.classList.remove("open"));
+window.addEventListener('load', () => {
+  app.renderPage();
 });

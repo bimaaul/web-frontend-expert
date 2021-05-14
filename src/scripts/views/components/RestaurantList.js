@@ -1,5 +1,5 @@
 import "./RestaurantCard";
-import * as data from "../data/DATA.json";
+import * as data from "../../data/DATA.json";
 
 const restaurants = data.restaurants;
 
