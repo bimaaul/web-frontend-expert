@@ -4,8 +4,10 @@ class FootBar extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `<p>Copyright © 2020 - Food Hunt</p>`;
+    this.innerHTML = `
+      <p>Copyright © 2020 - Food Hunt</p>
+    `;
   }
 }
 
-customElements.define("foot-bar", FootBar);
+customElements.define('foot-bar', FootBar);

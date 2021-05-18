@@ -1,7 +1,7 @@
 const Favorite = {
   async render() {
     return `
-          <h1>Your Favorite Movie</h1>
+      <h1>Your Favorite Movie</h1>
     `;
   },
 

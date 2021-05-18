@@ -10,10 +10,21 @@ $red: #ff3252;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: $font-family;
   font-size: $font-size;
   color: $primary;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    padding-top: 8vh;
+    flex: 1 0 auto;
+  }
 }
 
 a {
@@ -51,7 +62,7 @@ a {
 .nav {
   display: flex;
   width: 100%;
-  // position: fixed;
+  position: fixed;
   z-index: 1;
   justify-content: space-around;
   align-items: center;
@@ -145,10 +156,12 @@ footer {
   padding: 1.5em;
   width: 100%;
   text-align: center;
+  flex-shrink: 0;
+  margin-top: 32px;
 }
 
 /* Card */
-restaurant-list {
+.restaurant-list {
   margin: 32px auto auto;
   display: grid;
   gap: 16px;
@@ -175,13 +188,9 @@ restaurant-list {
       font-size: $font-size;
       top: 32px;
       border-radius: 0 8px 8px 0;
-      padding: 11.6px 16px;
+      padding: 10px 12px;
       font-weight: 600;
-      background-color: #fdc667;
-
-      &:hover {
-        background-color: #f9f871;
-      }
+      background-color: #f9f871;
     }
 
     .container {
@@ -214,9 +223,27 @@ restaurant-list {
   }
 }
 
+/* Like */
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Media breakpoints */
 @media screen and (min-width: 600px) {
-  restaurant-list {
+  .restaurant-list {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -267,7 +294,7 @@ restaurant-list {
 }
 
 @media screen and (min-width: 900px) {
-  restaurant-list {
+  .restaurant-list {
     grid-template-columns: 1fr 1fr 1fr;
   }
 

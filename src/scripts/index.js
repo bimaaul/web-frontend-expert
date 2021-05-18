@@ -4,6 +4,7 @@ import '../styles/main.scss';
 import './views/components/AppBar';
 import './views/components/FootBar';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('.burger'),
@@ -17,4 +18,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
