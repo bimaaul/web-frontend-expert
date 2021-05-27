@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import FavoriteRestaurantIdb from '../data/favorite-idb';
-import '../views/components/LikeButton';
-import '../views/components/LikedButton';
+import '../views/components/Like/LikeButton';
+import '../views/components/Like/LikedButton';
 
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {

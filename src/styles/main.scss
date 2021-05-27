@@ -43,6 +43,19 @@ a {
   }
 }
 
+.title {
+  text-align: center;
+  padding: 32px 0 0;
+}
+
+h3 {
+  margin: 8px 0 4px;
+}
+
+h4 {
+  margin: 4px 0;
+}
+
 /* Skip to content */
 .skip-link {
   position: absolute;
@@ -111,7 +124,6 @@ a {
   height: 70vh;
   background-image: linear-gradient(0deg, rgba(71, 69, 84, 0.3), rgba(71, 69, 84, 0.3)), url("../public/images/heros/hero-image_4.jpg");
   background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
 
@@ -162,6 +174,7 @@ footer {
 
 /* Card */
 .restaurant-list {
+  padding: 16px;
   margin: 32px auto auto;
   display: grid;
   gap: 16px;
@@ -184,7 +197,6 @@ footer {
 
     .city {
       position: absolute;
-      cursor: pointer;
       font-size: $font-size;
       top: 32px;
       border-radius: 0 8px 8px 0;
@@ -241,6 +253,136 @@ footer {
   justify-content: center;
 }
 
+/* Detail */
+.detailContainer {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  .poster {
+    overflow: hidden;
+    width: 500px;
+    margin: 0 auto;
+    
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+.reviews {
+  display: flex;
+  flex-direction: column;
+  
+  review-item {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    color: #000;
+    border: 1px solid #e3e3e3;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+
+    .review {
+      display: flex;
+      align-items: center;
+      
+      span {
+        padding-left: 8px;
+      }
+    }
+
+    .sender {
+      text-align: right;
+    }
+  }
+}
+.categories {
+  display: flex;
+
+  badge-item {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid #d7d7d7;
+    color: #000;
+    margin: 4px 8px 0 0;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+}
+.menus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  #foods, #drinks {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Review */
+.circle {
+  background-color: darkgray;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.form {
+  margin-bottom: 16px;
+  &__control {
+    display: flex;
+    flex-direction: column;
+
+    input, textarea {
+      display: block;
+      font-family: inherit;
+      width: 100%;
+      padding: .375rem .75rem;
+      margin-bottom: 8px;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+  }
+
+  &__action {
+    text-align: right;
+
+    button {
+      font-weight: 400;
+      cursor: pointer;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      padding: 9px 15px;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      color: #fff;
+      background-color: #C3786F;
+      border-color: #C3786F;
+    }
+  }
+}
+
 /* Media breakpoints */
 @media screen and (min-width: 600px) {
   .restaurant-list {
@@ -285,6 +427,12 @@ footer {
   .open {
     display: flex;
   }
+
+  .detail {
+    .poster {
+      width: 100% !important;
+    }
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -313,6 +461,23 @@ footer {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .detail {
+    grid-template-columns: 1fr;
+
+    .poster {
+      width: 80%;
+    }
+  }
+
+  .detailContainer {
+    h2 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   body {
     font-size: 16px;
@@ -323,5 +488,9 @@ footer {
       font-size: 24px;
       letter-spacing: 2px;
     }
+  }
+
+  .restaurant-list {
+    max-width: 1200px;
   }
 }

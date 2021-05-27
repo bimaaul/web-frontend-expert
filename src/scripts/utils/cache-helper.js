@@ -1,4 +1,5 @@
 import CONFIG from '../globals/config';
+import UrlParser from '../routes/url-parser';
 
 const CacheHelper = {
   async cachingAppShell(requests) {
@@ -36,6 +37,8 @@ const CacheHelper = {
 
   async _addCache(request) {
     const cache = await this._openCache();
+    const { verb } = UrlParser._urlSplitter(request.url);
+    if (verb === 'review') return;
     cache.add(request);
   },
 };

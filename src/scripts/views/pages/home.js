@@ -6,7 +6,7 @@ const Home = {
   async render() {
     return `
       <hero-element></hero-element>
-      <h1>Explore Restaurant</h1>
+      <h1 class="title">Explore Restaurant</h1>
       <div id="restaurant" class="restaurant-list"></div>
     `;
   },
@@ -20,6 +20,8 @@ const Home = {
         restaurantCardElement.data = restaurant;
         restaurantContainer.appendChild(restaurantCardElement);
       });
+    } else {
+      restaurantContainer.innerHTML = 'Data gagal dimuat, silahkan refresh halaman.';
     }
   },
 };
